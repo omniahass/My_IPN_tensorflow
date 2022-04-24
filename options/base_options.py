@@ -18,7 +18,7 @@ class BaseOptions():
         parser.add_argument('--dataroot', default='dataset', help='path to data')
         parser.add_argument('--gpu_ids', type=str, default='0,1', help='gpu ids')
         parser.add_argument('--data_size', type=str, default='[640,400,400]', help='input data size separated with comma')
-        parser.add_argument('--block_size', type=str, default='[160,100,100]', help='crop size separated with comma')
+        parser.add_argument('--block_size', type=str, default='[80,50,50]', help='crop size separated with comma') #halfed to be able to run with low gpu memory
         parser.add_argument('--input_nc', type=int, default=2, help='input channels')
 
         # paras2

@@ -9,6 +9,10 @@ import lossfunc
 from options.test_options import TestOptions
 import model
 
+config = tf.ConfigProto() #added this to prevent the use of entire gpu memory at one go from the start, so the memory gets used incrementally
+config.gpu_options.allow_growth=True # need to use this code to run a tensoflow code on a weak gpu
+sess = tf.Session(config=config)
+
 def main(argv=None):
     opt = TestOptions().parse()
     test_results = os.path.join(opt.saveroot,'test_results')
